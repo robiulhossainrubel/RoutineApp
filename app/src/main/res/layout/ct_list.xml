@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#E4F3D7"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dip"
+    android:layout_margin="8dip">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/clsttl"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:layout_marginTop="5dp"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000"
+            android:text="Applied Electricity a"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <LinearLayout
+        android:background="@drawable/item_bg"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:weightSum="4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/clscd"
+            android:layout_marginLeft="20dp"
+            android:textColor="#000"
+            android:text="ICE1101"
+            android:textSize="18dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="30dp"
+            android:layout_weight=".2"
+            android:src="@drawable/ic_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/clstm"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000"
+            android:textSize="18dp"
+            android:text="08:45AM-11:10AM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp">
+
+        <TextView
+            android:layout_marginStart="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:text="Topic : "
+            android:fontFamily="@font/lato_regular"
+            android:textSize="18dp"/>
+        <TextView
+            android:id="@+id/topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/lato_regular"
+            android:text="30/07/2019"
+            android:textSize="18dp"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="130dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginStart="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:text="Date : "
+            android:fontFamily="@font/lato_regular"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/lato_regular"
+            android:text="30/07/2019"
+            android:textSize="18dp"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:paddingTop="90dp"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/t1"
+                android:textSize="18dp"
+                android:textColor="#000"
+                android:text="Teacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/techcd"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@+id/t1"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:text="TNT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rtlay"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/t2"
+                android:textSize="18dp"
+                android:textColor="#000"
+                android:text="Room"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/roomno"
+                android:layout_below="@+id/t2"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:text="503"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

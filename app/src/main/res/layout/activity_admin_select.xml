@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E7EEED"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".admin.AdminSelectActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showPopup"
+        android:text="Choose Department"
+        android:background="@drawable/popup_bg"
+        />
+
+    <TextView
+        android:id="@+id/dept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Department selected"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/dpc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showPopup2"
+        android:text="Choose Semester"
+        android:background="@drawable/popup_bg"
+        />
+
+    <TextView
+        android:id="@+id/sem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Semester selected"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_forward"/>
+
+
+</LinearLayout>

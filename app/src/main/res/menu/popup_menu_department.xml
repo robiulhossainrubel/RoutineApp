@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ice"
+        android:title="ICE" />
+
+    <item
+        android:id="@+id/eee"
+        android:title="EEE" />
+
+    <item
+        android:id="@+id/cse"
+        android:title="CSE" />
+
+    <item
+        android:id="@+id/ete"
+        android:title="ETE" />
+
+    <item
+        android:id="@+id/civil"
+        android:title="CIVIL" />
+
+    <item
+        android:id="@+id/arch"
+        android:title="Arch" />
+
+    <item
+        android:id="@+id/urp"
+        android:title="URP" />
+
+    <item
+        android:id="@+id/che"
+        android:title="CHE" />
+
+    <item
+        android:id="@+id/phy"
+        android:title="PHY" />
+
+    <item
+        android:id="@+id/mat"
+        android:title="MAT" />
+
+    <item
+        android:id="@+id/stat"
+        android:title="STAT" />
+
+
+    <item
+        android:id="@+id/ge"
+        android:title="GE" />
+
+    <item
+        android:id="@+id/pharm"
+        android:title="PHARM" />
+
+    <item
+        android:id="@+id/bba"
+        android:title="BBA" />
+
+    <item
+        android:id="@+id/thm"
+        android:title="THM" />
+
+    <item
+        android:id="@+id/eco"
+        android:title="ECO" />
+
+    <item
+        android:id="@+id/ban"
+        android:title="BAN" />
+
+    <item
+        android:id="@+id/sw"
+        android:title="SW" />
+
+    <item
+        android:id="@+id/eng"
+        android:title="ENG" />
+
+    <item
+        android:id="@+id/pa"
+        android:title="PA" />
+
+    <item
+        android:id="@+id/hbs"
+        android:title="HBS" />
+
+
+
+
+</menu>
