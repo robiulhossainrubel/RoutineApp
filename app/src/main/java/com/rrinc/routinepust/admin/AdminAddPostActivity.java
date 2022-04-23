@@ -1,8 +1,5 @@
 package com.rrinc.routinepust.admin;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -10,7 +7,6 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,9 +14,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -34,6 +31,7 @@ import com.rrinc.routinepust.model.Post;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Objects;
 
 public class AdminAddPostActivity extends AppCompatActivity {
 
@@ -351,33 +349,25 @@ public class AdminAddPostActivity extends AppCompatActivity {
         SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yy h:mm a");
         String dateTime = dateFormat.format(calendar.getTime());
 
-        ChooseButton = (Button)findViewById(R.id.ButtonChooseImage);
-        UploadButton = (Button)findViewById(R.id.ButtonUploadImage);
-        tim = (TextView)findViewById(R.id.textview);
-        ImageName = (EditText)findViewById(R.id.ImageNameEditText);
-        dis = (EditText)findViewById(R.id.disEditText);
+        ChooseButton = findViewById(R.id.ButtonChooseImage);
+        UploadButton = findViewById(R.id.ButtonUploadImage);
+        tim = findViewById(R.id.textview);
+        ImageName = findViewById(R.id.ImageNameEditText);
+        dis = findViewById(R.id.disEditText);
 
-        SelectImage = (ImageView)findViewById(R.id.ShowImageView);
+        SelectImage = findViewById(R.id.ShowImageView);
 
         tim.setText(dateTime);
 
 
 
-        ChooseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openImage();
-            }
-        });
+        ChooseButton.setOnClickListener(view -> openImage());
 
-        UploadButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (uploadTask !=null && uploadTask.isInProgress()){
-                    Toast.makeText(getApplicationContext(),"Uploading....",Toast.LENGTH_SHORT).show();
-                }else {
-                    uploadImage();
-                }
+        UploadButton.setOnClickListener(view -> {
+            if (uploadTask !=null && uploadTask.isInProgress()){
+                Toast.makeText(getApplicationContext(),"Uploading....",Toast.LENGTH_SHORT).show();
+            }else {
+                uploadImage();
             }
         });
     }
@@ -406,48 +396,38 @@ public class AdminAddPostActivity extends AppCompatActivity {
                     +"."+getFileExtension(imageUri));
 
             uploadTask = fileRefernce.putFile(imageUri);
-            uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot,Task<Uri>>() {
-                @Override
-                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+            uploadTask.continueWithTask((Continuation<UploadTask.TaskSnapshot, Task<Uri>>) task -> {
 
-                    if (!task.isSuccessful()){
-                        throw task.getException();
-                    }
-
-                    return fileRefernce.getDownloadUrl();
+                if (!task.isSuccessful()){
+                    throw Objects.requireNonNull(task.getException());
                 }
-            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                @Override
-                public void onComplete(@NonNull Task task) {
-                    if (task.isSuccessful()){
-                        Uri downloadUri = (Uri) task.getResult();
-                        assert downloadUri != null;
-                        String mUri= downloadUri.toString();
 
-                        String ImageUploadId = reference.push().getKey();
-                        String TempImageName = ImageName.getText().toString().trim();
-                        String time = tim.getText().toString().trim();
-                        String disc = dis.getText().toString().trim();
-                        Toast.makeText(getApplicationContext(), "Image Uploaded Successfully ", Toast.LENGTH_LONG).show();
+                return fileRefernce.getDownloadUrl();
+            }).addOnCompleteListener((OnCompleteListener<Uri>) task -> {
+                if (task.isSuccessful()){
+                    Uri downloadUri = task.getResult();
+                    assert downloadUri != null;
+                    String mUri= downloadUri.toString();
 
-                        Post imageUploadInfo = new Post(ImageUploadId,TempImageName, mUri,disc,time);
+                    String ImageUploadId = reference.push().getKey();
+                    String TempImageName = ImageName.getText().toString().trim();
+                    String time = tim.getText().toString().trim();
+                    String disc = dis.getText().toString().trim();
+                    Toast.makeText(getApplicationContext(), "Image Uploaded Successfully ", Toast.LENGTH_LONG).show();
 
-                        assert ImageUploadId != null;
-                        reference.child(ImageUploadId).setValue(imageUploadInfo);
-                        openImagesActivity();
-                        pd.dismiss();
-                    }else {
-                        Toast.makeText(getApplicationContext(),"Failed",Toast.LENGTH_SHORT).show();
-                        pd.dismiss();
-                    }
+                    Post imageUploadInfo = new Post(ImageUploadId,TempImageName, mUri,disc,time);
 
+                    assert ImageUploadId != null;
+                    reference.child(ImageUploadId).setValue(imageUploadInfo);
+                    openImagesActivity();
+                }else {
+                    Toast.makeText(getApplicationContext(),"Failed",Toast.LENGTH_SHORT).show();
                 }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
-                    pd.dismiss();
-                }
+                pd.dismiss();
+
+            }).addOnFailureListener(e -> {
+                Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+                pd.dismiss();
             });
         }else {
             String ImageUploadId = reference.push().getKey();

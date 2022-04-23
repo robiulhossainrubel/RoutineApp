@@ -51,13 +51,9 @@ public class AddRoutineAdminActivity extends AppCompatActivity implements PopupM
         dept.setText(dep);
         seme.setText(sem);
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-               saveData(dep,sem,day);
-            }
+        btn.setOnClickListener(v -> {
+            assert dep != null;
+            saveData(dep,sem,day);
         });
 
     }

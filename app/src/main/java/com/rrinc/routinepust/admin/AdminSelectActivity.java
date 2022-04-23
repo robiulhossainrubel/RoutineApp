@@ -32,7 +32,7 @@ public class AdminSelectActivity extends AppCompatActivity implements PopupMenu.
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         // cheack if user not fund or fund
-        if(firebaseUser !=null && admin.getAdept()!="" && admin.getAseme()!=""){
+        if(firebaseUser !=null && !admin.getAdept().equals("") && !admin.getAseme().equals("")){
             Intent intent = new Intent(AdminSelectActivity.this,AdminDashBoard.class);
             intent.putExtra("dep",admin.getAdept());
             intent.putExtra("sem",admin.getAseme());
@@ -49,18 +49,13 @@ public class AdminSelectActivity extends AppCompatActivity implements PopupMenu.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_select);
 
-        tvs = (TextView) findViewById(R.id.sem);
-        tvd =(TextView)findViewById(R.id.dept);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
+        tvs = findViewById(R.id.sem);
+        tvd = findViewById(R.id.dept);
+        fab = findViewById(R.id.fab);
 
         fab.setVisibility(View.GONE);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goNext(dep,sem);
-            }
-        });
+        fab.setOnClickListener(v -> goNext(dep,sem));
 
     }
 

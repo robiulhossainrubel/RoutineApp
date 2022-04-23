@@ -49,34 +49,31 @@ public class EditRoutineAdminActivity extends AppCompatActivity implements Popup
         final String dept = getIntent().getStringExtra("dep");
         final String seme = getIntent().getStringExtra("sem");
 
-        tv = (TextView)findViewById(R.id.tv);
-        btn= (Button)findViewById(R.id.pops);
-        r = (ListView) findViewById(R.id.rec1);
+        tv = findViewById(R.id.tv);
+        btn= findViewById(R.id.pops);
+        r = findViewById(R.id.rec1);
 
 
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                routineList =new ArrayList<>();
+        btn.setOnClickListener(v -> {
+            routineList =new ArrayList<>();
 
-                if (day.equals("sat")){
-                    readSat(dept,seme);
-                }else if (day.equals("sun")){
-                    readSun(dept,seme);
-                }else if (day.equals("mon")){
-                    readMon(dept,seme);
-                }else if (day.equals("tue")){
-                    readTue(dept,seme);
-                }else if (day.equals("wed")){
-                    readWed(dept,seme);
-                }else if (day.equals("thu")){
-                    readThu(dept,seme);
-                }else if (day.equals("fri")){
-                    readFri(dept,seme);
-                }
-
+            if (day.equals("sat")){
+                readSat(dept,seme);
+            }else if (day.equals("sun")){
+                readSun(dept,seme);
+            }else if (day.equals("mon")){
+                readMon(dept,seme);
+            }else if (day.equals("tue")){
+                readTue(dept,seme);
+            }else if (day.equals("wed")){
+                readWed(dept,seme);
+            }else if (day.equals("thu")){
+                readThu(dept,seme);
+            }else if (day.equals("fri")){
+                readFri(dept,seme);
             }
+
         });
 
         r.setOnItemClickListener(new AdapterView.OnItemClickListener() {

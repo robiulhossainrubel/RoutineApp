@@ -1,12 +1,11 @@
 package com.rrinc.routinepust.admin;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -42,13 +41,9 @@ public class AddCtAdminActivity extends AppCompatActivity {
         final String dep = getIntent().getStringExtra("dep");
         final String sem = getIntent().getStringExtra("sem");
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                saveData(dep,sem);
-            }
+        btn.setOnClickListener(v -> {
+            assert dep != null;
+            saveData(dep,sem);
         });
     }
 
@@ -342,6 +337,7 @@ public class AddCtAdminActivity extends AppCompatActivity {
         String top = topic.getText().toString();
 
         CT info = new CT(titel,code,top,tech,dat,room,time,key);
+        assert key != null;
         reference.child(key).setValue(info);
         Toast.makeText(getApplicationContext(),"CT added successfully",Toast.LENGTH_SHORT).show();
 
