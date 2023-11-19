@@ -1,15 +1,12 @@
 package com.rrinc.routinepust.activities;
 
+import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,10 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rrinc.routinepust.R;
 import com.rrinc.routinepust.model.Post;
-import com.rrinc.routinepust.model.RoutineInfo;
-import com.rrinc.routinepust.utils.PostAdapter;
 import com.rrinc.routinepust.utils.PostRecycleAdapter;
-import com.rrinc.routinepust.utils.RecycleViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +37,7 @@ public class AnnouncementActivity extends AppCompatActivity {
         final String dept = getIntent().getStringExtra("dep");
         final String see = getIntent().getStringExtra("sem");
 
-        recyclerView = (RecyclerView) findViewById(R.id.announ_recy);
+        recyclerView = findViewById(R.id.announ_recy);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -53,6 +47,7 @@ public class AnnouncementActivity extends AppCompatActivity {
 
         postList = new ArrayList<>();
 
+        assert dept != null;
         readPost(dept, see);
     }
 

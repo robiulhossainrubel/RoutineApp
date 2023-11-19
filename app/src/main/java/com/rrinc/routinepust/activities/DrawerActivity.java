@@ -2,22 +2,23 @@ package com.rrinc.routinepust.activities;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.core.view.GravityCompat;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-
-import android.os.Handler;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.rrinc.routinepust.R;
 import com.rrinc.routinepust.admin.AdminSelectActivity;
-import com.rrinc.routinepust.service.AlarmReciver;
-import com.rrinc.routinepust.utils.ViewPageAdapter;
 import com.rrinc.routinepust.fragments.FragmentFriday;
 import com.rrinc.routinepust.fragments.FragmentMonday;
 import com.rrinc.routinepust.fragments.FragmentSaturday;
@@ -25,18 +26,10 @@ import com.rrinc.routinepust.fragments.FragmentSunday;
 import com.rrinc.routinepust.fragments.FragmentThursday;
 import com.rrinc.routinepust.fragments.FragmentTuesday;
 import com.rrinc.routinepust.fragments.FragmentWednesday;
-
-import androidx.drawerlayout.widget.DrawerLayout;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.viewpager.widget.ViewPager;
-
-import android.view.Menu;
-import android.widget.Toast;
+import com.rrinc.routinepust.service.AlarmReciver;
+import com.rrinc.routinepust.utils.ViewPageAdapter;
 
 import java.util.Calendar;
-import java.util.logging.LogRecord;
 
 public class DrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -74,9 +67,9 @@ public class DrawerActivity extends AppCompatActivity
         bundle.putString("dept",dep);
         bundle.putString("seme",sem);
 
-        tabLayout=(TabLayout) findViewById(R.id.tablayout_id);
+        tabLayout= findViewById(R.id.tablayout_id);
 
-        viewPager=(ViewPager)findViewById(R.id.viewpager_id);
+        viewPager= findViewById(R.id.viewpager_id);
         ViewPageAdapter adapter=new ViewPageAdapter(getSupportFragmentManager());
 
         FragmentSaturday fragmentSaturday = new FragmentSaturday();

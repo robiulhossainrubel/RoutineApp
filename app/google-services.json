@@ -1,45 +1,27 @@
 {
   "project_info": {
-    "project_number": "712210604843",
-    "firebase_url": "https://routinepust-d2d7d.firebaseio.com",
-    "project_id": "routinepust-d2d7d",
-    "storage_bucket": "routinepust-d2d7d.appspot.com"
+    "project_number": "1027197784065",
+    "firebase_url": "https://routineapp-c8766-default-rtdb.firebaseio.com",
+    "project_id": "routineapp-c8766",
+    "storage_bucket": "routineapp-c8766.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:712210604843:android:1a088a7e1f853623",
+        "mobilesdk_app_id": "1:1027197784065:android:e9e33816b71097ed2e7000",
         "android_client_info": {
           "package_name": "com.rrinc.routinepust"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "712210604843-mecs4lnncjal5k9qujdf5gld0uh8ec04.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.rrinc.routinepust",
-            "certificate_hash": "0d32271ed08b96e4d0dab2e4a2196b555ba39adc"
-          }
-        },
-        {
-          "client_id": "712210604843-8s2gclgmpb12qnabkgougdh3uq3hjibt.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA9eLZ9agNf9SlZvSe0wMnvisRgEvZ6GZY"
+          "current_key": "AIzaSyCTgrQwViKIQ6AOsAFu8Pw2CoVEvHQcUHw"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "712210604843-8s2gclgmpb12qnabkgougdh3uq3hjibt.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
