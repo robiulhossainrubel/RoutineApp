@@ -29,7 +29,7 @@
             <TextView
                 android:id="@+id/username"
                 android:layout_below="@+id/hlw"
-                android:text="Robiul Hossain Rubel"
+                android:text="Admin"
                 android:textColor="#fff"
                 android:textSize="22sp"
                 android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
             <TextView
                 android:id="@+id/ID"
                 android:layout_below="@+id/username"
-                android:text="190614"
+                android:text="404"
                 android:textColor="#52baff"
                 android:textSize="14sp"
                 android:layout_width="wrap_content"
@@ -131,7 +131,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Notice"
+                        android:text="Add Notice"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
@@ -169,7 +169,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Edit Notice"
+                        android:text="Edit Routine"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
@@ -207,7 +207,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="CT Notice"
+                        android:text="Add CT"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 

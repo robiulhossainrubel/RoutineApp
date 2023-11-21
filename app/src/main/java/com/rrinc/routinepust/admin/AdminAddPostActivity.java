@@ -63,7 +63,7 @@ public class AdminAddPostActivity extends AppCompatActivity {
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
 
 
-        reference= FirebaseDatabase.getInstance().getReference("Post").child("ICE").child("1st_Year");
+        reference= FirebaseDatabase.getInstance().getReference("Post").child(Dep).child(Sem);
         // ICE
 
 
